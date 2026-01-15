@@ -227,10 +227,13 @@ function RegisterPage({ onLogin }) {
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-white text-gray-900"
               >
-                <option value="customer">Individual / Small Business</option>
-                <option value="corporate">Corporate / Enterprise</option>
+                <option value="customer">Customer (Track Shipments)</option>
+                <option value="corporate">Corporate Account</option>
+                <option value="employee">Employee (Upload Shipments)</option>
               </select>
-              <p className="text-xs text-gray-500 mt-2">Choose the account type that best fits your needs</p>
+              <p className="text-xs text-gray-500 mt-2">
+                Select "Employee" if you work for Ghana Logistics Co.
+              </p>
             </div>
 
             {/* Password Field */}
