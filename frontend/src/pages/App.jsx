@@ -11,6 +11,7 @@ import LoginPage from './LoginPage';
 import RegisterPage from './RegisterPage';
 import DashboardPage from './DashboardPage';
 import FAQPage from './FAQPage';
+import EmployeeUploadPage from './EmployeeUploadPage';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -62,6 +63,16 @@ function App() {
             <Route 
               path="/dashboard" 
               element={currentUser ? <DashboardPage user={currentUser} /> : <Navigate to="/login" />} 
+            />
+            <Route 
+              path="/upload-shipments" 
+              element={
+                currentUser && currentUser.role === 'employee' ? (
+                  <EmployeeUploadPage user={currentUser} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              } 
             />
           </Routes>
         </main>
